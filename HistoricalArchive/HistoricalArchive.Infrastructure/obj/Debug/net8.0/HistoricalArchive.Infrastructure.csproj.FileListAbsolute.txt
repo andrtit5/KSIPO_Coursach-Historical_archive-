@@ -15,8 +15,8 @@ C:\archiv\HistoricalArchive.Infrastructure\bin\Debug\net8.0\HistoricalArchive.Do
 C:\archiv\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.csproj.AssemblyReference.cache
 C:\archiv\HistoricalArchive.Infrastructure\obj\Debug\net8.0\Historic.72FF70E4.Up2Date
 C:\archiv\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.genruntimeconfig.cache
-C:\archiv\HistoricalArchive\HistoricalArchive.Infrastructure\bin\Debug\net8.0\HistoricalArchive.Infrastructure.deps.json
-C:\archiv\HistoricalArchive\HistoricalArchive.Infrastructure\bin\Debug\net8.0\HistoricalArchive.Infrastructure.runtimeconfig.json
+C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\bin\Debug\net8.0\HistoricalArchive.Infrastructure.deps.json
+C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\bin\Debug\net8.0\HistoricalArchive.Infrastructure.runtimeconfig.json
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\bin\Debug\net8.0\HistoricalArchive.Infrastructure.dll
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\bin\Debug\net8.0\HistoricalArchive.Infrastructure.pdb
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\bin\Debug\net8.0\HistoricalArchive.Domain.dll
@@ -26,9 +26,9 @@ C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\Hi
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.AssemblyInfoInputs.cache
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.AssemblyInfo.cs
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.csproj.CoreCompileInputs.cache
-C:\archiv\HistoricalArchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\Historic.72FF70E4.Up2Date
+C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\Historic.72FF70E4.Up2Date
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.dll
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\refint\HistoricalArchive.Infrastructure.dll
 C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.pdb
-C:\archiv\HistoricalArchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.genruntimeconfig.cache
-C:\archiv\HistoricalArchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\ref\HistoricalArchive.Infrastructure.dll
+C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\HistoricalArchive.Infrastructure.genruntimeconfig.cache
+C:\archiv\historicalarchive\HistoricalArchive.Infrastructure\obj\Debug\net8.0\ref\HistoricalArchive.Infrastructure.dll

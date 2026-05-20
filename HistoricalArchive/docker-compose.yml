@@ -1,0 +1,45 @@
+﻿version: '3.8'
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: HistoricalArchive.App/Dockerfile
+    container_name: historical-archive-app
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=historical_archive;Username=postgres;Password=postgres
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - archive-net
+
+  db:
+    image: postgres:15-alpine
+    container_name: historical-archive-db
+    environment:
+      POSTGRES_DB: historical_archive
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - archive-net
+
+networks:
+  archive-net:
+    driver: bridge
+
+volumes:
+  pgdata:
