@@ -1,0 +1,53 @@
+@page "/add-document"
+@inject HistoricalArchive.Domain.Interfaces.IRepository<HistoricalArchive.Domain.Models.Document> DocRepo
+@inject NavigationManager Nav
+@using FluentValidation.Results
+
+<PageTitle>Добавить документ</PageTitle>
+
+<h3>Новый документ</h3>
+
+<EditForm Model="@newDoc" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    
+    <div class="mb-3">
+        <label>Название *</label>
+        <InputText @bind-Value="newDoc.Title" class="form-control" />
+        <ValidationMessage For="@(() => newDoc.Title)" class="text-danger" />
+    </div>
+    
+    <div class="mb-3">
+        <label>Описание *</label>
+        <InputTextArea @bind-Value="newDoc.Description" class="form-control" rows="3" />
+        <ValidationMessage For="@(() => newDoc.Description)" class="text-danger" />
+    </div>
+    
+    <div class="mb-3">
+        <label>ID Архива *</label>
+        <InputNumber @bind-Value="newDoc.ArchiveId" class="form-control" />
+        <ValidationMessage For="@(() => newDoc.ArchiveId)" class="text-danger" />
+    </div>
+    
+    <button type="submit" class="btn btn-success">💾 Сохранить</button>
+    <a href="/documents" class="btn btn-secondary ms-2">↩️ Отмена</a>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-info mt-3">@message</div>
+}
+
+@code {
+    private HistoricalArchive.Domain.Models.Document newDoc = new();
+    private string? message;
+
+    private async Task HandleValidSubmit()
+    {
+        newDoc.CreatedDate = DateTime.UtcNow;
+        await DocRepo.AddAsync(newDoc);
+        message = "✅ Документ добавлен!";
+        newDoc = new();
+        // Опционально: перенаправление после сохранения
+        // Nav.NavigateTo("/documents");
+    }
+}
