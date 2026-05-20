@@ -1,0 +1,47 @@
+@page "/documents"
+@inject HistoricalArchive.Domain.Interfaces.IRepository<HistoricalArchive.Domain.Models.Document> DocRepo
+@inject NavigationManager Nav
+
+<PageTitle>Документы архива</PageTitle>
+
+<h3>Управление документами</h3>
+
+<div class="mb-3">
+    <a href="/add-document" class="btn btn-primary">➕ Добавить документ</a>
+</div>
+
+@if (docs == null) { <p><em>Загрузка...</em></p> }
+else if (!docs.Any()) { <p>Документов нет.</p> }
+else {
+    <table class="table table-striped">
+        <thead><tr><th>ID</th><th>Название</th><th>ID Архива</th><th>Действия</th></tr></thead>
+        <tbody>
+            @foreach (var doc in docs)
+            {
+                <tr>
+                    <td>@doc.Id</td>
+                    <td>@doc.Title</td>
+                    <td>@doc.ArchiveId</td>
+                    <td>
+                        <button class="btn btn-sm btn-danger" @onclick="() => Delete(doc.Id)">Удалить</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<HistoricalArchive.Domain.Models.Document>? docs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        docs = (await DocRepo.GetAllAsync()).ToList();
+    }
+
+    private async Task Delete(int id)
+    {
+        await DocRepo.DeleteAsync(id);
+        docs = (await DocRepo.GetAllAsync()).ToList();
+    }
+}
